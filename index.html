@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A game of Tic Tac Toe where users can play either against a friend or against the computer">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>TicTacToe</title>
 </head>
+
 <body>
     <h1>TicTacToe</h1>
-    
+
     <!--modal for game select-->
     <div id="modal-window">
         <h2>TicTacToe</h2>
-        <button data-type="vsPlayer" class="game-mode">vsPlayer</button>
-        <button data-type="vsComputer" class="game-mode">vsComputer</button>
+        <button data-type="vsPlayer" class="game-mode">vs Player</button>
+        <button data-type="vsComputer" class="game-mode">vs Computer</button>
     </div>
     <div id="modal-bg"></div>
 
@@ -31,7 +35,7 @@
         <div data-index="9" class="tile"></div>
         <div id="strike" class="strike"></div>
     </div>
-    
+
     <!--game over screen-->
     <div id="game-over-area" class="hidden">
         <h2 id="game-over-text"></h2>
@@ -41,4 +45,5 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
