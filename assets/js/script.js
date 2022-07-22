@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let buttons = document.getElementsByClassName('game-mode');
         for (let button of buttons) {
             button.addEventListener('click', function () {
-                onclick = modal.className -= 'active', modalBackground.clasName -= 'active';
+                onclick = modal.className -= 'active', modalBackground.className -= 'active';
                 let gameType = this.getAttribute('data-type');
                 runGame(gameType);
                 console.log(gameType);
@@ -154,3 +154,21 @@ function checkWinner(){
     }
 }
 
+function gameOverScreen(winnerText){
+    let text = 'Draw!';
+    if(winnerText != null){
+        text = `Winner is ${winnerText}`;
+    }
+    gameOverArea.className = 'visible';
+    gameOverText.innerText = text;
+}
+
+function startNewGame(){
+    strike.className = 'strike';
+    gameOverArea.className = 'hidden';
+    boardState.fill(null);
+    tiles.forEach((tile) => (tile.innerText = ''));
+    turn = playerX;
+    setHoverText();
+    runGame();
+}
