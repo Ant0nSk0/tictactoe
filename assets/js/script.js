@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     window.onload = function () {
-        let modal = document.getElementById('modal-window');
-        let modalBackground = document.getElementById('modal-bg');
         modalBackground.className += 'active';
         modal.className += 'active';
         let buttons = document.getElementsByClassName('game-mode');
@@ -24,7 +22,8 @@ const boardState = Array(tiles.length);
 boardState.fill(null);
 
 //elements
-
+const modal = document.getElementById('modal-window');
+const modalBackground = document.getElementById('modal-bg');
 const strike = document.getElementById('strike');
 const gameOverArea = document.getElementById('game-over-area');
 const gameOverText = document.getElementById('game-over-text');
@@ -160,6 +159,7 @@ function gameOverScreen(winnerText){
         text = `Winner is ${winnerText}`;
     }
     gameOverArea.className = 'visible';
+    modalBackground.className = 'active';
     gameOverText.innerText = text;
 }
 
@@ -167,11 +167,11 @@ function gameOverScreen(winnerText){
 function startNewGame(){
     strike.className = 'strike';
     gameOverArea.className = 'hidden';
+    modalBackground.className -= 'active';
     boardState.fill(null);
     tiles.forEach((tile) => (tile.innerText = ''));
     turn = playerX;
     setHoverText();
-    runGame();
 }
 
 //win conditions

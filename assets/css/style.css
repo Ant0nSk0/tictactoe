@@ -94,11 +94,15 @@ body {
 /*START of game over*/
 
 #game-over-area {
-    text-align: center;
-    border: 8px solid black;
-    padding: 50px;
-    width: 50%;
-    margin-top:50px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: #fff;
+    padding:20px;
+    border-radius:5px;
+    top:50px;
+    text-align:center;
 }
 
 h2 {
@@ -107,10 +111,12 @@ h2 {
 }
 
 button {
-    border: 1px solid black;
-    background-color: transparent;
     font-size: 1.3em;
+    background: #363636;
+    border: none;
+    color: #fff;
     padding: 10px;
+    border-radius: 3px;
 }
 
 .hidden {
@@ -169,13 +175,4 @@ button {
 #modal-window.active {
     display: block;
 }
-
-.game-mode {
-    background: #363636;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-}
-
 /*END of modal*/
