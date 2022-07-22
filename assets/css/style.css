@@ -7,7 +7,7 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
-    color: black;
+    color: #d05c39;
 }
 
 /*START of Game Area*/
@@ -102,7 +102,7 @@ body {
     left:50%;
     transform: translateX(-50%);
     z-index: 9999;
-    background: #fff;
+    background: #fafafa;
     padding:20px;
     border-radius:5px;
     top:50px;
@@ -115,12 +115,13 @@ h2 {
 }
 
 button {
-    font-size: 1.3em;
-    background: #363636;
+    font-size: 1.2em;
+    background: #4f3824;
     border: none;
-    color: #fff;
+    color: #fafafa;
     padding: 10px;
     border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 .hidden {
@@ -169,7 +170,7 @@ button {
     left:50%;
     transform: translateX(-50%);
     z-index: 9999;
-    background: #fff;
+    background: #fafafa;
     padding:20px;
     border-radius:5px;
     top:50px;
