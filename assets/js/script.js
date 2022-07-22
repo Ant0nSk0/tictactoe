@@ -53,3 +53,41 @@ function setHoverText(){
     })
 }
 setHoverText();
+
+function runGame(gameType){
+
+    tiles.forEach(tile => tile.addEventListener('click', tileClick));
+    function tileClick(event) {
+        
+        if (gameOverArea.classList.contains('visible')){
+            return;
+        }
+
+        const tile = event.target;
+        const tileNumber = tile.dataset.index;
+
+        if (tile.innerText != ''){
+            return;
+        }
+
+        if (turn === playerX && gameType === 'vsComputer'){
+            tile.innerText = playerX;
+            boardState[tileNumber -1] = playerX;
+
+            computerTurn();
+            checkWinner();
+
+            function computerTurn(){
+
+                
+
+
+            }
+
+
+        }
+
+
+    }
+
+}
