@@ -37,3 +37,19 @@ changeMode.addEventListener('click', refresh);
 function refresh(){
     onclick = location.reload()
 }
+
+function setHoverText(){
+    tiles.forEach((tile) => {
+        tile.classList.remove('x-hover');
+        tile.classList.remove('o-hover');
+    })
+
+    const hoverClass = `${turn.toLowerCase()}-hover`;
+
+    tiles.forEach((tile) => {
+        if (tile.innerText == '') {
+            tile.classList.add(hoverClass);
+        }
+    })
+}
+setHoverText();
