@@ -152,7 +152,7 @@ function checkWinner(){
         gameOverScreen(null);
     }
 }
-
+//winnerText = tileValue1
 function gameOverScreen(winnerText){
     let text = 'Draw!';
     if(winnerText != null){
