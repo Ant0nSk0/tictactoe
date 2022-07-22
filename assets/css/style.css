@@ -179,4 +179,21 @@ button {
 #modal-window.active {
     display: block;
 }
+
 /*END of modal*/
+/*media queries*/
+
+@media screen and (min-width: 920px){
+    #board {
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+    }
+    
+    .tile {
+        font-size: 5em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+}
