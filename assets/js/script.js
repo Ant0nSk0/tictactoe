@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 onclick = modal.className -= 'active', modalBackground.className -= 'active';
                 let gameType = this.getAttribute('data-type');
                 runGame(gameType);
-                console.log(gameType);
             })
         }
     }
@@ -78,6 +77,7 @@ function runGame(gameType) {
             computerTurn();
             checkWinner();
 
+            //computer decision
             function computerTurn() {
                 switch (tiles.textContent === '' != 'X') {
                     case tiles[0].textContent === '':
@@ -163,6 +163,7 @@ function gameOverScreen(winnerText){
     gameOverText.innerText = text;
 }
 
+//play again
 function startNewGame(){
     strike.className = 'strike';
     gameOverArea.className = 'hidden';
@@ -173,6 +174,7 @@ function startNewGame(){
     runGame();
 }
 
+//win conditions
 const winningCombinations = [
     //rows
     {combo: [1, 2, 3], strikeClass: 'strike-row-1'},

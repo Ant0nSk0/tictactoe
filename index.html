@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1>TicTacToe</h1>
+    
+    <!--modal for game select-->
     <div id="modal-window">
         <h2>TicTacToe</h2>
         <button data-type="vsPlayer" class="game-mode">vsPlayer</button>
@@ -16,6 +18,7 @@
     </div>
     <div id="modal-bg"></div>
 
+    <!--game board-->
     <div id="board">
         <div data-index="1" class="tile right-border bottom-border"></div>
         <div data-index="2" class="tile right-border bottom-border"></div>
@@ -29,6 +32,7 @@
         <div id="strike" class="strike"></div>
     </div>
     
+    <!--game over screen-->
     <div id="game-over-area" class="hidden">
         <h2 id="game-over-text"></h2>
         <button id="restart">Play again</button>
