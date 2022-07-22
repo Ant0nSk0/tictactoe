@@ -5,13 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let buttons = document.getElementsByClassName('game-mode');
         for (let button of buttons) {
             button.addEventListener('click', function () {
-                onclick = modal.className -= 'active', modalBackground.className -= 'active';
+                modal.className -= 'active';
+                modalBackground.className -= 'active';
                 let gameType = this.getAttribute('data-type');
                 runGame(gameType);
-            })
+            });
         }
-    }
-})
+    };
+});
 
 const tiles = document.querySelectorAll('.tile');
 const playerX = 'X';
@@ -33,14 +34,14 @@ const changeMode = document.getElementById('change-mode');
 changeMode.addEventListener('click', refresh);
 
 function refresh() {
-    onclick = location.reload()
+    location.reload();
 }
 
 function setHoverText() {
     tiles.forEach((tile) => {
         tile.classList.remove('x-hover');
         tile.classList.remove('o-hover');
-    })
+    });
 
     const hoverClass = `${turn.toLowerCase()}-hover`;
 
@@ -48,7 +49,7 @@ function setHoverText() {
         if (tile.innerText == '') {
             tile.classList.add(hoverClass);
         }
-    })
+    });
 }
 setHoverText();
 
