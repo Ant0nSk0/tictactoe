@@ -5,7 +5,7 @@ On this site users can play Tic Tac Toe, either with a friend or against the com
 
 ## Features  
 + Game Select  
-When arriving on the site the user is welcomed by a window asking whether you like to play versus another player or versus the computer. This modal dims the background while open.  
+When arriving on the site the user is welcomed by a window asking whether they would like to play versus another player or versus the computer. This modal dims the background while open.  
 ![tictactoe-gameselect](assets/images/game-select-modal2.PNG)  
 
 + Game Board  
@@ -15,7 +15,7 @@ After making a decision the user is presented with the header and the game board
 ![half-gameboard](assets/images/game-board-midgame.PNG)  
 
 + Game Over Screen  
-After winning, losing or ending in a draw the user is presented with a game over screen stated the winner and asking whether they would like to play again or change the game mode.  
+After winning, losing or ending in a draw the user is presented with a game over screen stating the winner and asking whether they would like to play again or change the game mode.  
 ![gameover-screen](assets/images/game-over-modal2.PNG)  
 
 ## Future Features  
