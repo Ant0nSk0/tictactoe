@@ -72,4 +72,8 @@ To do so:
 4. Click "Source" and choose "main".
 5. Click on "Save"
 A link will show up, wait for it to load and then click on it to go to the deployed page.
-The live link can be found here: https://ant0nsk0.github.io/tictactoe/
+The live link can be found here: https://ant0nsk0.github.io/tictactoe/  
+
+## Credits  
++ The code for the base game was adopted from a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA)
++ Font is from [Google Fonts](https://fonts.google.com/specimen/Righteous)
