@@ -32,7 +32,7 @@ Tests were performed on the following devices and browsers:
     + Samsung Internet
     + Duck Duck Go  
 
-On all of the above, the design of the site looks as intended. Users with a slightly bigger screen get a slightly bigger game board. Game logic functioned properly except for instance described below. 
+On all of the above, the design of the site looks as intended during testing of responsiveness at various sizes. Users with a slightly bigger screen get a slightly bigger game board. Game logic functioned properly in all browsers / devices tested. 
 
 *Tests included but are not limited to:*
 
@@ -87,5 +87,5 @@ A link will show up, wait for it to load and then click on it to go to the deplo
 The live link can be found here: https://ant0nsk0.github.io/tictactoe/  
 
 ## Credits  
-+ The code for the base game was adopted from following a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA)
++ The code for the game was adopted from following a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA)
 + Font is from [Google Fonts](https://fonts.google.com/specimen/Righteous)
