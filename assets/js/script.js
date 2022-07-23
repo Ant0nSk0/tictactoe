@@ -73,10 +73,12 @@ function runGame(gameType) {
         if (turn === playerX && gameType === 'vsComputer') {
             tile.innerText = playerX;
             boardState[tileNumber - 1] = playerX;
-
-            computerTurn();
             checkWinner();
 
+            if (modalBackground.className != 'active'){
+                computerTurn();
+            }
+            
             //computer decision
             function computerTurn() {
                 switch (tiles.textContent === '' != 'X') {
