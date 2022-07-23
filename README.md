@@ -87,5 +87,5 @@ A link will show up, wait for it to load and then click on it to go to the deplo
 The live link can be found here: https://ant0nsk0.github.io/tictactoe/  
 
 ## Credits  
-+ The code for the game was taken from following a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA)
++ The code for the game was adopted from following a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA). This includes win conditions, strikeclass, hovertext. More bits and pieces was adopted, transformed, and modified from the tutorial. 
 + Font is from [Google Fonts](https://fonts.google.com/specimen/Righteous)

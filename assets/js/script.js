@@ -36,7 +36,7 @@ changeMode.addEventListener('click', refresh);
 function refresh() {
     location.reload();
 }
-
+// set hover - credit Adam (see README)
 function setHoverText() {
     tiles.forEach((tile) => {
         tile.classList.remove('x-hover');
@@ -136,7 +136,7 @@ function runGame(gameType) {
 }
 
 function checkWinner(){
-    //check for winner
+    //check for winner - credit to Adam (see README)
     for (const winningCombination of winningCombinations){
         const {combo, strikeClass} = winningCombination;
         const tileValue1 = boardState[combo[0] -1];
@@ -177,7 +177,7 @@ function startNewGame(){
     setHoverText();
 }
 
-//win conditions
+//win conditions - credit to Adam (see README)
 const winningCombinations = [
     //rows
     {combo: [1, 2, 3], strikeClass: 'strike-row-1'},
