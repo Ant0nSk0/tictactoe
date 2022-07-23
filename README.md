@@ -36,7 +36,7 @@ On all of the above, the design of the site looks as intended. Users with a slig
 
 ### Bugs found during testing:  
 + Having set a cursor:pointer in CSS for the game board gave the game board an odd blue flash when clicked on my mobile device. Removing the styled cursor solved the issue.  
-+ Odd case where if player and computer both falls on winning combinations, the game over screen would not display the correct winner. Currently looking into the issue.  
++ Odd case where if player and computer both falls on winning combinations, the game over screen would not display the correct winner. Fixed the issue by writing an if statement stopping the computers turn from firing if a win condition has been met.  
 
 ### Google Lighthouse Audit  
 ![lighthouse](assets/images/tictactoe-lighthouse.PNG)  
@@ -58,7 +58,7 @@ On all of the above, the design of the site looks as intended. Users with a slig
         + The most complex function has a cyclomatic complexity value of 10 while the median is 1.  
 
 ### Unfixed Bugs  
-+ Bug found during testing were if both the player and the computer lands on a winning condition, the game over screen would display the wrong winner. Currently looking into it.  
++ No known unfixed bugs. 
 
 ## Deployment  
 This project was deployed to GitHub Pages.
