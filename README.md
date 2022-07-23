@@ -1,12 +1,12 @@
 # Tic Tac Toe  
 On this site users can play Tic Tac Toe, either with a friend or against the computer. The site is targeted towards people who simply want a quick game of Tic Tac Toe, whether they are alone or not.  
 
-![tictactoe-mockup](assets/images/tictactoe-mockup.PNG)  
+![tictactoe-mockup](assets/images/tictactoe-mockup2.PNG)  
 
 ## Features  
 + Game Select  
 When arriving on the site the user is welcomed by a window asking whether you like to play versus another player or versus the computer. This modal dims the background while open.  
-![tictactoe-gameselect](assets/images/game-select-modal.PNG)  
+![tictactoe-gameselect](assets/images/game-select-modal2.PNG)  
 
 + Game Board  
 After making a decision the user is presented with the header and the game board and is allowed to make the first move. The user will notice that when hovering over a tile with the mouse, the current players symbol will be shown indicating who's turn it is.  
@@ -16,7 +16,7 @@ After making a decision the user is presented with the header and the game board
 
 + Game Over Screen  
 After winning, losing or ending in a draw the user is presented with a game over screen stated the winner and asking whether they would like to play again or change the game mode.  
-![gameover-screen](assets/images/game-over-modal.PNG)  
+![gameover-screen](assets/images/game-over-modal2.PNG)  
 
 ## Future Features  
 Future features might include a score counter, difficulty settings and sound.  
