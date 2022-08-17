@@ -125,7 +125,9 @@ function checkWinner(){
         const tileValue3 = boardState[combo[2] -1];
 
         if (tileValue1 != null && tileValue1 === tileValue2 && tileValue1 === tileValue3){
-            
+            tiles[combo[0] -1].classList.add('win-highlight');
+            tiles[combo[1] -1].classList.add('win-highlight');
+            tiles[combo[2] -1].classList.add('win-highlight');
             gameOverScreen(tileValue1);
             return;
         }
@@ -152,7 +154,7 @@ function startNewGame(){
     gameOverArea.className = 'hidden';
     modalBackground.className -= 'active';
     boardState.fill(null);
-    tiles.forEach((tile) => (tile.innerText = ''));
+    tiles.forEach((tile) => (tile.innerText = '', tile.classList.remove('win-highlight')));
     turn = playerX;
     setHoverText();
 }

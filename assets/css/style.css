@@ -141,3 +141,10 @@ p {
         font-size: 3em;
     }
 }
+
+/*General*/
+
+.win-highlight {
+    background-color: #0db11581;
+    font-size: 7.5rem;
+}
