@@ -289,5 +289,7 @@ function modalClick() {
     modal.className -= 'active';
     modalBackground.className -= 'active';
     let gameType = this.getAttribute('data-type');
+    let currentMode = document.getElementById('current-mode');
+    currentMode.innerText += ` ${gameType}`;
     runGame(gameType);
 }
