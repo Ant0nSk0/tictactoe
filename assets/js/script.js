@@ -55,25 +55,32 @@ function runGame(gameType) {
             tile.innerText = playerX;
             boardState[tileNumber - 1] = playerX;
             checkWinner();
-            if (modalBackground.className != 'active'){
+            if (modalBackground.className != 'active') {
                 computerTurn();
             }
-            
-        } else if (turn === playerX && gameType === 'vsPlayer'){
+
+        } else if (turn === playerX && gameType === 'vsPlayer') {
             tile.innerText = playerX;
-            boardState[tileNumber -1] = playerX;
+            boardState[tileNumber - 1] = playerX;
             turn = playerO;
 
-        } else if (turn === playerO && gameType === 'vsPlayer'){
+        } else if (turn === playerO && gameType === 'vsPlayer') {
             tile.innerText = playerO;
-            boardState[tileNumber -1] = playerO;
+            boardState[tileNumber - 1] = playerO;
             turn = playerX;
         } else if (turn === playerX && gameType === 'vsMedium') {
             tile.innerText = playerX;
-            boardState[tileNumber -1] = playerX;
+            boardState[tileNumber - 1] = playerX;
             checkWinner();
             if (modalBackground.className != 'active') {
                 mediumMode();
+            }
+        } else if (turn === playerX && gameType === 'vsHard') {
+            tile.innerText = playerX;
+            boardState[tileNumber - 1] = playerX;
+            checkWinner();
+            if (modalBackground.className != 'active') {
+                hardMode();
             }
         }
 
@@ -82,7 +89,7 @@ function runGame(gameType) {
     }
 }
 
-//computer decision
+// Easy difficulty - Goes through tiles in a set order.
 function computerTurn() {
     switch (tiles.textContent === '' != 'X') {
         case tiles[4].textContent === '':
@@ -135,32 +142,90 @@ function mediumMode() {
     turn = playerX;
 }
 
-function checkWinner(){
-    //check for winner - credit to Adam (see README)
-    for (const winningCombination of winningCombinations){
-        const {combo} = winningCombination;
-        const tileValue1 = boardState[combo[0] -1];
-        const tileValue2 = boardState[combo[1] -1];
-        const tileValue3 = boardState[combo[2] -1];
+// Hard difficulty - Tries to play the next spot where there's two of the same. Else random.
+function hardMode() {
+    if (tiles[4].textContent == '') {
+        tiles[4].textContent = computerO;
+        boardState[4] = computerO;
+    } // check diagonally and outer rows/columns:
+    else if (tiles[0].textContent != '' && tiles[0].textContent === tiles[1].textContent && tiles[2].textContent == '' ||
+        tiles[5].textContent != '' && tiles[5].textContent === tiles[8].textContent && tiles[2].textContent == '' ||
+        tiles[4].textContent != '' && tiles[4].textContent === tiles[6].textContent && tiles[2].textContent == '') {
+        tiles[2].textContent = computerO;
+        boardState[2] = computerO;
+        turn = playerX;
+    } else if (tiles[1].textContent != '' && tiles[1].textContent === tiles[2].textContent && tiles[0].textContent == '' ||
+        tiles[3].textContent != '' && tiles[3].textContent === tiles[6].textContent && tiles[0].textContent == '' ||
+        tiles[4].textContent != '' && tiles[4].textContent === tiles[8].textContent && tiles[0].textContent == '') {
+        tiles[0].textContent = computerO;
+        boardState[0] = computerO;
+        turn = playerX;
+    } else if (tiles[2].textContent != '' && tiles[2].textContent === tiles[5].textContent && tiles[8].textContent == '' ||
+        tiles[0].textContent != '' && tiles[0].textContent === tiles[4].textContent && tiles[8].textContent == '' ||
+        tiles[6].textContent != '' && tiles[6].textContent === tiles[7].textContent && tiles[8].textContent == '') {
+        tiles[8].textContent = computerO;
+        boardState[8] = computerO;
+        turn = playerX;
+    } else if (tiles[0].textContent != '' && tiles[0].textContent === tiles[3].textContent && tiles[6].textContent == '' ||
+        tiles[2].textContent != '' && tiles[2].textContent === tiles[4].textContent && tiles[6].textContent == '' ||
+        tiles[7].textContent != '' && tiles[7].textContent === tiles[8].textContent && tiles[6].textContent == '') {
+        tiles[6].textContent = computerO;
+        boardState[6] = computerO;
+        turn = playerX;
+    } // check inner rows/columns:
+    else if (tiles[4].textContent != '' && tiles[4].textContent === tiles[5].textContent && tiles[3].textContent == '' ||
+        tiles[0].textContent != '' && tiles[0].textContent === tiles[6].textContent && tiles[3].textContent == '') {
+        tiles[3].textContent = computerO;
+        boardState[3] = computerO;
+        turn = playerX;
+    } else if (tiles[3].textContent != '' && tiles[3].textContent === tiles[4].textContent && tiles[5].textContent == '' ||
+        tiles[2].textContent != '' && tiles[2].textContent === tiles[8].textContent && tiles[5].textContent == '') {
+        tiles[5].textContent = computerO;
+        boardState[5] = computerO;
+        turn = playerX;
+    } else if (tiles[1].textContent != '' && tiles[1].textContent === tiles[4].textContent && tiles[7].textContent == '' ||
+        tiles[6].textContent != '' && tiles[6].textContent === tiles[8].textContent && tiles[7].textContent == '') {
+        tiles[7].textContent = computerO;
+        boardState[7] = computerO;
+        turn = playerX;
+    } else if (tiles[0].textContent != '' && tiles[0].textContent === tiles[2].textContent && tiles[1].textContent == '' ||
+        tiles[4].textContent != '' && tiles[4].textContent === tiles[7].textContent && tiles[1].textContent == '') {
+        tiles[1].textContent = computerO;
+        boardState[1] = computerO;
+        turn = playerX;
+    } else {
+        mediumMode();
+    }
+}
 
-        if (tileValue1 != null && tileValue1 === tileValue2 && tileValue1 === tileValue3){
-            tiles[combo[0] -1].classList.add('win-highlight');
-            tiles[combo[1] -1].classList.add('win-highlight');
-            tiles[combo[2] -1].classList.add('win-highlight');
+function checkWinner() {
+    //check for winner - credit to Adam (see README)
+    for (const winningCombination of winningCombinations) {
+        const {
+            combo
+        } = winningCombination;
+        const tileValue1 = boardState[combo[0] - 1];
+        const tileValue2 = boardState[combo[1] - 1];
+        const tileValue3 = boardState[combo[2] - 1];
+
+        if (tileValue1 != null && tileValue1 === tileValue2 && tileValue1 === tileValue3) {
+            tiles[combo[0] - 1].classList.add('win-highlight');
+            tiles[combo[1] - 1].classList.add('win-highlight');
+            tiles[combo[2] - 1].classList.add('win-highlight');
             gameOverScreen(tileValue1);
             return;
         }
     }
     //check draw
     const allTileFilledIn = boardState.every((tile) => tile != null);
-    if (allTileFilledIn){
+    if (allTileFilledIn) {
         gameOverScreen(null);
     }
 }
 //winnerText = tileValue1
-function gameOverScreen(winnerText){
+function gameOverScreen(winnerText) {
     let text = 'Draw!';
-    if(winnerText != null){
+    if (winnerText != null) {
         text = `Winner is ${winnerText}`;
     }
     gameOverArea.className = 'visible';
@@ -169,7 +234,7 @@ function gameOverScreen(winnerText){
 }
 
 //play again
-function startNewGame(){
+function startNewGame() {
     gameOverArea.className = 'hidden';
     modalBackground.className -= 'active';
     boardState.fill(null);
@@ -181,16 +246,32 @@ function startNewGame(){
 //win conditions - credit to Adam (see README)
 const winningCombinations = [
     //rows
-    {combo: [1, 2, 3]},
-    {combo: [4, 5, 6]},
-    {combo: [7, 8, 9]},
+    {
+        combo: [1, 2, 3]
+    },
+    {
+        combo: [4, 5, 6]
+    },
+    {
+        combo: [7, 8, 9]
+    },
     //columns
-    {combo: [1, 4, 7]},
-    {combo: [2, 5, 8]},
-    {combo: [3, 6, 9]},
+    {
+        combo: [1, 4, 7]
+    },
+    {
+        combo: [2, 5, 8]
+    },
+    {
+        combo: [3, 6, 9]
+    },
     //diagonals
-    {combo: [1, 5, 9]},
-    {combo: [3, 5, 7]},
+    {
+        combo: [1, 5, 9]
+    },
+    {
+        combo: [3, 5, 7]
+    },
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -203,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 });
+
 function modalClick() {
     modal.className -= 'active';
     modalBackground.className -= 'active';
