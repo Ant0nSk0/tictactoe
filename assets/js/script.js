@@ -9,7 +9,6 @@ boardState.fill(null);
 //elements
 const modal = document.getElementById('modal-window');
 const modalBackground = document.getElementById('modal-bg');
-const strike = document.getElementById('strike');
 const gameOverArea = document.getElementById('game-over-area');
 const gameOverText = document.getElementById('game-over-text');
 const playAgain = document.getElementById('restart');
@@ -120,13 +119,13 @@ function computerTurn() {
 function checkWinner(){
     //check for winner - credit to Adam (see README)
     for (const winningCombination of winningCombinations){
-        const {combo, strikeClass} = winningCombination;
+        const {combo} = winningCombination;
         const tileValue1 = boardState[combo[0] -1];
         const tileValue2 = boardState[combo[1] -1];
         const tileValue3 = boardState[combo[2] -1];
 
         if (tileValue1 != null && tileValue1 === tileValue2 && tileValue1 === tileValue3){
-            strike.classList.add(strikeClass);
+            
             gameOverScreen(tileValue1);
             return;
         }
@@ -150,7 +149,6 @@ function gameOverScreen(winnerText){
 
 //play again
 function startNewGame(){
-    strike.className = 'strike';
     gameOverArea.className = 'hidden';
     modalBackground.className -= 'active';
     boardState.fill(null);
@@ -162,16 +160,16 @@ function startNewGame(){
 //win conditions - credit to Adam (see README)
 const winningCombinations = [
     //rows
-    {combo: [1, 2, 3], strikeClass: 'strike-row-1'},
-    {combo: [4, 5, 6], strikeClass: 'strike-row-2'},
-    {combo: [7, 8, 9], strikeClass: 'strike-row-3'},
+    {combo: [1, 2, 3]},
+    {combo: [4, 5, 6]},
+    {combo: [7, 8, 9]},
     //columns
-    {combo: [1, 4, 7], strikeClass: 'strike-column-1'},
-    {combo: [2, 5, 8], strikeClass: 'strike-column-2'},
-    {combo: [3, 6, 9], strikeClass: 'strike-column-3'},
+    {combo: [1, 4, 7]},
+    {combo: [2, 5, 8]},
+    {combo: [3, 6, 9]},
     //diagonals
-    {combo: [1, 5, 9], strikeClass: 'strike-diagonal-1'},
-    {combo: [3, 5, 7], strikeClass: 'strike-diagonal-2'},
+    {combo: [1, 5, 9]},
+    {combo: [3, 5, 7]},
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
