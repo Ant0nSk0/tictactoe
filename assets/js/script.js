@@ -38,11 +38,9 @@ function setHoverText() {
 setHoverText();
 
 function runGame(gameType) {
-
     tiles.forEach(tile => tile.addEventListener('click', tileClick));
 
     function tileClick(event) {
-
         if (gameOverArea.classList.contains('visible')) {
             return;
         }
@@ -80,41 +78,41 @@ function runGame(gameType) {
 //computer decision
 function computerTurn() {
     switch (tiles.textContent === '' != 'X') {
+        case tiles[4].textContent === '':
+            tiles[4].textContent = computerO;
+            boardState[4] = computerO;
+            break;
+        case tiles[8].textContent === '':
+            tiles[8].textContent = computerO;
+            boardState[8] = computerO;
+            break;
         case tiles[0].textContent === '':
             tiles[0].textContent = computerO;
             boardState[0] = computerO;
-            break;
-        case tiles[1].textContent === '':
-            tiles[1].textContent = computerO;
-            boardState[1] = computerO;
             break;
         case tiles[2].textContent === '':
             tiles[2].textContent = computerO;
             boardState[2] = computerO;
             break;
-        case tiles[3].textContent === '':
-            tiles[3].textContent = computerO;
-            boardState[3] = computerO;
-            break;
-        case tiles[4].textContent === '':
-            tiles[4].textContent = computerO;
-            boardState[4] = computerO;
-            break;
-        case tiles[5].textContent === '':
-            tiles[5].textContent = computerO;
-            boardState[5] = computerO;
-            break;
         case tiles[6].textContent === '':
             tiles[6].textContent = computerO;
             boardState[6] = computerO;
+            break;
+        case tiles[1].textContent === '':
+            tiles[1].textContent = computerO;
+            boardState[1] = computerO;
             break;
         case tiles[7].textContent === '':
             tiles[7].textContent = computerO;
             boardState[7] = computerO;
             break;
-        case tiles[8].textContent === '':
-            tiles[8].textContent = computerO;
-            boardState[8] = computerO;
+        case tiles[5].textContent === '':
+            tiles[5].textContent = computerO;
+            boardState[5] = computerO;
+            break;
+        case tiles[3].textContent === '':
+            tiles[3].textContent = computerO;
+            boardState[3] = computerO;
             break;
     }
 }
@@ -191,4 +189,4 @@ function modalClick() {
     modalBackground.className -= 'active';
     let gameType = this.getAttribute('data-type');
     runGame(gameType);
-};
+}
