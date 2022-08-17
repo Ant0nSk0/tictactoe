@@ -51,7 +51,7 @@ function runGame(gameType) {
             return;
         }
 
-        if (turn === playerX && gameType === 'vsComputer') {
+        if (turn === playerX && gameType === 'vsEasy') {
             tile.innerText = playerX;
             boardState[tileNumber - 1] = playerX;
             checkWinner();
