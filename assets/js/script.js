@@ -68,7 +68,15 @@ function runGame(gameType) {
             tile.innerText = playerO;
             boardState[tileNumber -1] = playerO;
             turn = playerX;
+        } else if (turn === playerX && gameType === 'vsMedium') {
+            tile.innerText = playerX;
+            boardState[tileNumber -1] = playerX;
+            checkWinner();
+            if (modalBackground.className != 'active') {
+                mediumMode();
+            }
         }
+
         checkWinner();
         setHoverText();
     }
@@ -114,6 +122,17 @@ function computerTurn() {
             boardState[3] = computerO;
             break;
     }
+}
+
+// Medium difficulty - Random moveset
+function mediumMode() {
+    let random = Math.floor(Math.random() * tiles.length);
+    while (tiles[random].textContent !== '') {
+        random = Math.floor(Math.random() * tiles.length);
+    }
+    tiles[random].textContent = computerO;
+    boardState[random] = computerO;
+    turn = playerX;
 }
 
 function checkWinner(){
