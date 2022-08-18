@@ -12,46 +12,47 @@
 </head>
 
 <body>
-    <h1>TicTacToe</h1>
-    <div>
-        <b>X: <span id="x-score">0</span></b>
-        <b>O: <span id="o-score">0</span></b>
-    </div>
-    <!--modal for game select-->
-    <div id="modal-window">
-        <h2>TicTacToe</h2>
-        <p>Welcome!<br>Pick a game mode:</p>
-        <button data-type="vsPlayer" class="game-mode">vs Player</button>
-        <fieldset>
-            <legend>vsComputer</legend>
-            <button data-type="vsEasy" class="game-mode">Easy</button>
-            <button data-type="vsMedium" class="game-mode">Medium</button>
-            <button data-type="vsHard" class="game-mode">Hard</button>
-        </fieldset>
-    </div>
-    <div id="modal-bg"></div>
+    <div id="main-container">
+        <h1>TicTacToe</h1>
+        <div>
+            <b>X: <span id="x-score">0</span></b>
+            <b>O: <span id="o-score">0</span></b>
+        </div>
+        <!--modal for game select-->
+        <div id="modal-window">
+            <h2>TicTacToe</h2>
+            <p>Welcome!<br>Pick a game mode:</p>
+            <button data-type="vsPlayer" class="game-mode">vs Player</button>
+            <fieldset>
+                <legend>vsComputer</legend>
+                <button data-type="vsEasy" class="game-mode">Easy</button>
+                <button data-type="vsMedium" class="game-mode">Medium</button>
+                <button data-type="vsHard" class="game-mode">Hard</button>
+            </fieldset>
+        </div>
+        <div id="modal-bg"></div>
 
-    <!--game board-->
-    <div id="board">
-        <div data-index="1" class="tile right-border bottom-border"></div>
-        <div data-index="2" class="tile right-border bottom-border"></div>
-        <div data-index="3" class="tile bottom-border"></div>
-        <div data-index="4" class="tile right-border bottom-border"></div>
-        <div data-index="5" class="tile right-border bottom-border"></div>
-        <div data-index="6" class="tile bottom-border"></div>
-        <div data-index="7" class="tile right-border"></div>
-        <div data-index="8" class="tile right-border"></div>
-        <div data-index="9" class="tile"></div>
+        <!--game board-->
+        <div id="board">
+            <div data-index="1" class="tile right-border bottom-border"></div>
+            <div data-index="2" class="tile right-border bottom-border"></div>
+            <div data-index="3" class="tile bottom-border"></div>
+            <div data-index="4" class="tile right-border bottom-border"></div>
+            <div data-index="5" class="tile right-border bottom-border"></div>
+            <div data-index="6" class="tile bottom-border"></div>
+            <div data-index="7" class="tile right-border"></div>
+            <div data-index="8" class="tile right-border"></div>
+            <div data-index="9" class="tile"></div>
+        </div>
+        <p id="current-mode">Current game mode: </p>
+        <!--game over screen-->
+        <div id="game-over-area" class="hidden">
+            <h2 id="game-over-text">winner is</h2>
+            <p>Rematch?<br>Or try another game mode:</p>
+            <button id="restart">Play again</button>
+            <button id="change-mode">Change Mode</button>
+        </div>
     </div>
-    <p id="current-mode">Current game mode: </p>
-    <!--game over screen-->
-    <div id="game-over-area" class="hidden">
-        <h2 id="game-over-text">winner is</h2>
-        <p>Rematch?<br>Or try another game mode:</p>
-        <button id="restart">Play again</button>
-        <button id="change-mode">Change Mode</button>
-    </div>
-
     <script src="assets/js/script.js"></script>
 </body>
 
