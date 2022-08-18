@@ -247,8 +247,11 @@ function gameOverScreen(winnerText) {
 
 //play again
 function startNewGame() {
-    gameOverArea.className = 'hidden';
-    modalBackground.className -= 'active';
+    gameOverArea.classList.add('fall-out');
+    setTimeout(() => {
+        gameOverArea.className = 'hidden';
+        modalBackground.className -= 'active';
+    }, 300);
     boardState.fill(null);
     tiles.forEach((tile) => (tile.innerText = '', tile.classList.remove('win-highlight')));
     turn = playerX;
@@ -298,8 +301,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function modalClick() {
-    modal.className -= 'active';
-    modalBackground.className -= 'active';
+    modal.classList.add('fall-out');
+    setTimeout(() => {
+        modal.className -= 'active';
+        modalBackground.className -= 'active';
+    }, 300);
     let gameType = this.getAttribute('data-type');
     let currentMode = document.getElementById('current-mode');
     currentMode.innerText += ` ${gameType}`;

@@ -166,3 +166,19 @@ p {
         opacity: 1;
     }
 }
+
+@keyframes fall-out {
+    from {
+        top: 50px;
+        opacity: 1;
+    }
+    to {
+        top: -400px;
+        opacity: 0;
+    }
+}
+
+#modal-window.fall-out, #game-over-area.fall-out {
+    animation-name: fall-out;
+    animation-duration: 0.5s;
+}
