@@ -3,6 +3,10 @@ const playerX = 'X';
 const playerO = 'O';
 let turn = playerX;
 const computerO = 'O';
+let xScore = 0;
+let oScore = 0;
+let displayXScore = document.getElementById('x-score');
+let displayOScore = document.getElementById('o-score');
 const boardState = Array(tiles.length);
 boardState.fill(null);
 
@@ -57,16 +61,17 @@ function runGame(gameType) {
             checkWinner();
             if (modalBackground.className != 'active') {
                 computerTurn();
+                checkWinner();
             }
-
         } else if (turn === playerX && gameType === 'vsPlayer') {
             tile.innerText = playerX;
             boardState[tileNumber - 1] = playerX;
+            checkWinner();
             turn = playerO;
-
         } else if (turn === playerO && gameType === 'vsPlayer') {
             tile.innerText = playerO;
             boardState[tileNumber - 1] = playerO;
+            checkWinner();
             turn = playerX;
         } else if (turn === playerX && gameType === 'vsMedium') {
             tile.innerText = playerX;
@@ -74,6 +79,7 @@ function runGame(gameType) {
             checkWinner();
             if (modalBackground.className != 'active') {
                 mediumMode();
+                checkWinner();
             }
         } else if (turn === playerX && gameType === 'vsHard') {
             tile.innerText = playerX;
@@ -81,10 +87,9 @@ function runGame(gameType) {
             checkWinner();
             if (modalBackground.className != 'active') {
                 hardMode();
+                checkWinner();
             }
         }
-
-        checkWinner();
         setHoverText();
     }
 }
@@ -224,10 +229,17 @@ function checkWinner() {
 }
 //winnerText = tileValue1
 function gameOverScreen(winnerText) {
+    if (winnerText == 'X') {
+        xScore += 1;
+    } else if (winnerText == 'O') {
+        oScore += 1;
+    }
     let text = 'Draw!';
     if (winnerText != null) {
         text = `Winner is ${winnerText}`;
     }
+    displayXScore.innerText = ` ${xScore}`;
+    displayOScore.innerText = ` ${oScore}`;
     gameOverArea.className = 'visible';
     modalBackground.className = 'active';
     gameOverText.innerText = text;
