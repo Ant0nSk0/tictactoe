@@ -46,6 +46,8 @@ body {
     border-radius:5px;
     top:50px;
     text-align:center;
+    animation-name: fall-in;
+    animation-duration: 0.5s;
 }
 
 h2 {
@@ -114,6 +116,8 @@ button {
     border-radius:5px;
     top:50px;
     text-align:center;
+    animation-name: fall-in;
+    animation-duration: 0.5s;
 }
 
 #modal-window.active {
@@ -142,9 +146,23 @@ p {
     }
 }
 
-/*General*/
+/*START of general*/
 
 .win-highlight {
     background-color: #0db11581;
     font-size: 7.5rem;
+}
+
+/*END of general*/
+/*START of animations*/
+
+@keyframes fall-in {
+    from {
+        top: -400px;
+        opacity: 0;
+    }
+    to {
+        top: 50px;
+        opacity: 1;
+    }
 }
