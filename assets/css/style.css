@@ -40,6 +40,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #039682;
+}
+
+.tile.x-color {
+    color: #d05c39;
 }
 
 .right-border {
@@ -96,6 +101,7 @@ button {
 
 .x-hover:hover::after {
     content: "X";
+    color: #d05c39;
     opacity: 0.4;
 }
 
@@ -176,8 +182,8 @@ legend {
 /*START of general*/
 
 .win-highlight {
-    background-color: #0db11581;
-    font-size: 7.5rem;
+    background-color: #28e6314a;
+    font-size: 7rem;
 }
 
 span {
@@ -188,6 +194,10 @@ b {
     padding: 15px;
     line-height: 3;
     font-size: 1.5rem;
+}
+
+b ~ b {
+    color: #039682;
 }
 
 h1 {

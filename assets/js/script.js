@@ -47,9 +47,14 @@ function runGame(gameType) {
         if (gameOverArea.classList.contains('visible')) {
             return;
         }
-
         const tile = event.target;
         const tileNumber = tile.dataset.index;
+
+        if (turn == playerX && tile.textContent == '') {
+            tile.classList.add('x-color');
+        } else {
+            tile.classList.remove('x-color');
+        }
 
         if (tile.innerText != '') {
             return;
@@ -253,7 +258,7 @@ function startNewGame() {
         modalBackground.className -= 'active';
     }, 300);
     boardState.fill(null);
-    tiles.forEach((tile) => (tile.innerText = '', tile.classList.remove('win-highlight')));
+    tiles.forEach((tile) => (tile.innerText = '', tile.classList.remove('win-highlight', 'x-color')));
     turn = playerX;
     setHoverText();
 }
