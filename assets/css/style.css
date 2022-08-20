@@ -16,6 +16,11 @@ body {
     margin:0 auto;
 }
 
+body.color-flip {
+    background-image: linear-gradient(to bottom, #d05c39, #aa771c, #7c892d, #4c9356, #039682);
+    color: #039682;
+}
+
 #main-container {
     display: flex;
     flex-direction: column;
@@ -184,6 +189,7 @@ b {
     font-size: 1.5rem;
     text-shadow: 0.5px 0.5px black;
     letter-spacing: 2px;
+    color: #d05c39;
 }
 
 b ~ b {

@@ -19,6 +19,10 @@ const playAgain = document.getElementById('restart');
 playAgain.addEventListener('click', startNewGame);
 const changeMode = document.getElementById('change-mode');
 changeMode.addEventListener('click', refresh);
+const flip = document.querySelector('h1');
+flip.addEventListener('click', function(){
+    document.body.classList.toggle('color-flip');
+})
 
 function refresh() {
     location.reload();
