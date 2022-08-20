@@ -20,7 +20,7 @@ playAgain.addEventListener('click', startNewGame);
 const changeMode = document.getElementById('change-mode');
 changeMode.addEventListener('click', refresh);
 const flip = document.querySelector('h1');
-flip.addEventListener('click', function(){
+flip.addEventListener('click', function () {
     document.body.classList.toggle('color-flip');
 })
 
@@ -54,10 +54,8 @@ function runGame(gameType) {
         const tile = event.target;
         const tileNumber = tile.dataset.index;
 
-        if (turn == playerX && tile.textContent == '') {
+        if (turn === playerX && tile.textContent === '') {
             tile.classList.add('x-color');
-        } else {
-            tile.classList.remove('x-color');
         }
 
         if (tile.innerText != '') {

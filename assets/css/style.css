@@ -174,9 +174,10 @@ legend {
 /*START of general*/
 
 .win-highlight {
-    background-color: #28e6314a;
+    background-color: #28e63129;
     font-size: 6rem;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px 2px black;
+    box-shadow: inset 0px 0px 10px 0 black;
 }
 
 span {
