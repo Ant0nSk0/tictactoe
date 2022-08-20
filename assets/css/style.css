@@ -72,6 +72,7 @@ body {
     outline: 6px solid #fafafac5;
     animation-name: fall-in;
     animation-duration: 0.5s;
+    width: max-content;
 }
 
 h2 {
@@ -145,6 +146,7 @@ button {
     outline: 6px solid #fafafac5;
     animation-name: fall-in;
     animation-duration: 0.5s;
+    width: max-content;
 }
 
 #modal-window.active {
@@ -160,27 +162,10 @@ fieldset {
 }
 
 legend {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 /*END of modal*/
-/*media queries*/
-
-@media screen and (min-width: 920px){
-    #board {
-        grid-template-columns: 150px 150px 150px;
-        grid-template-rows: 150px 150px 150px;
-    }
-    
-    .tile {
-        font-size: 5em;
-    }
-
-    h1 {
-        font-size: 3em;
-    }
-}
-
 /*START of general*/
 
 .win-highlight {
@@ -238,4 +223,43 @@ h1 {
 #modal-window.fall-out, #game-over-area.fall-out {
     animation-name: fall-out;
     animation-duration: 0.5s;
+}
+
+/*media queries*/
+
+@media screen and (min-width: 920px){
+    #board {
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+    }
+    
+    .tile {
+        font-size: 5em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    #main-container {
+        width: 100vw;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #modal-window, #game-over-area {
+        width: auto;
+    }
+
+    #board {
+        grid-template-columns: 80px 80px 80px;
+        grid-template-rows: 80px 80px 80px;
+    }
+
+    .win-highlight {
+        font-size: 4.5em;
+    }
 }
