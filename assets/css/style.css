@@ -36,7 +36,7 @@ body {
 }
 
 .tile {
-    font-size: 3.5em;
+    font-size: 4em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,7 +170,7 @@ legend {
 
 .win-highlight {
     background-color: #28e6314a;
-    font-size: 7rem;
+    font-size: 6rem;
     text-shadow: 2px 2px black;
 }
 
@@ -234,11 +234,15 @@ h1 {
     }
     
     .tile {
-        font-size: 5em;
+        font-size: 6em;
     }
 
     h1 {
         font-size: 3em;
+    }
+
+    .win-highlight {
+        font-size: 9em;
     }
 }
 
