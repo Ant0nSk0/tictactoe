@@ -22,12 +22,12 @@ changeMode.addEventListener('click', refresh);
 const flip = document.querySelector('h1');
 flip.addEventListener('click', function () {
     document.body.classList.toggle('color-flip');
-})
+});
 
 function refresh() {
     location.reload();
 }
-// set hover - credit Adam (see README)
+// set hover - credit to Adam (see README)
 function setHoverText() {
     tiles.forEach((tile) => {
         tile.classList.remove('x-hover');
@@ -211,7 +211,7 @@ function hardMode() {
 }
 
 function checkWinner() {
-    //check for winner - credit to Adam (see README)
+    //check for winner - adopted and altered from tutorial (see README)
     for (const winningCombination of winningCombinations) {
         const {
             combo
@@ -228,7 +228,7 @@ function checkWinner() {
             return;
         }
     }
-    //check draw
+    //check draw - from tutorial (see README)
     const allTileFilledIn = boardState.every((tile) => tile != null);
     if (allTileFilledIn) {
         gameOverScreen(null);
@@ -265,7 +265,7 @@ function startNewGame() {
     setHoverText();
 }
 
-//win conditions - credit to Adam (see README)
+//win conditions - adopted and altered from tutorial (see README)
 const winningCombinations = [
     //rows
     {
