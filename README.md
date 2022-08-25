@@ -6,7 +6,7 @@ On this site users can play Tic Tac Toe, either with a friend or against the com
 ## Features  
 + Game Select  
 When arriving on the site the user is welcomed by a window asking whether they would like to play versus another player or versus the computer. Playing versus the computer has three difficulties; easy, medium and hard. This modal dims the background while open.  
-![tictactoe-gameselect](assets/images/tictactoe-game-modal.PNG)  
+![tictactoe-gameselect](assets/images/tictactoe-game-modal2.PNG)  
 
 + Game Board  
 After making a decision the user is presented with the header with a score counter underneath followed by the game board and is allowed to make the first move. The user will notice that when hovering over a tile with the mouse, the current players symbol will be shown indicating who's turn it is.      
