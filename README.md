@@ -16,6 +16,15 @@ The user can, if they wish, click on the header to flip the colors of the page.
 ![gameboard-filled](assets/images/ttt-gameboard-filled.PNG)  
 Under the game area is a text displaying the current game mode.
 
++ Difficulties  
+The versus computer mode features three difficulties:  
+    + Easy  
+    The computer has a predetermined moveset.  
+    + Medium  
+    The computer moves randomly.  
+    + Hard  
+    The computer will look for two of the same symbols and take the last connecting spot, meaning either blocking the other player or winning. Else it will take a random spot.  
+  
 + Game Over Screen  
 After winning, losing or ending in a draw the user is presented with a game over screen stating the winner and asking whether they would like to play again or change the game mode.  
 ![gameover-screen](assets/images/ttt-gameover.PNG)  
@@ -39,9 +48,10 @@ Tests were performed on the following devices and browsers:
     + Samsung Internet
     + Duck Duck Go  
 
-On all of the above, the design of the site looks as intended during testing of responsiveness at various sizes. Users with a slightly bigger screen get a slightly bigger game board. Game logic functioned properly in all browsers / devices tested. 
+On all of the above, the design of the site looks as intended during testing of responsiveness at various sizes. Users with a slightly bigger screen get a slightly bigger game board, smaller get smaller. Game logic functioned properly in all browsers / devices tested.  
 
-*Tests included but are not limited to:*
+*Tests vs computer were done on all difficulties*  
+*Tests included but are not limited to:*  
 
 | Game Type | Test Description | Steps / Process | Expected Results | Actual Results |  |
 |---|---|---|---|---|---|
