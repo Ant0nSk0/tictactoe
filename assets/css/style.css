@@ -95,6 +95,7 @@ button {
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 1px 1px 2px 1px black;
+    margin: 0 1px;
 }
 
 .hidden {
@@ -288,7 +289,7 @@ h1 {
     }
 
     .button-wrap {
-        max-width: 150px;
+        width: 150px;
     }
 
     h3 {
