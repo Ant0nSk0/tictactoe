@@ -1,25 +1,32 @@
 # Tic Tac Toe  
 On this site users can play Tic Tac Toe, either with a friend or against the computer. The site is targeted towards people who simply want a quick game of Tic Tac Toe, whether they are alone or not.  
 
-![tictactoe-mockup](assets/images/tictactoe-mockup2.PNG)  
+![tictactoe-mockup](assets/images/tictactoe-mockup.PNG)  
 
 ## Features  
 + Game Select  
-When arriving on the site the user is welcomed by a window asking whether they would like to play versus another player or versus the computer. This modal dims the background while open.  
-![tictactoe-gameselect](assets/images/game-select-modal2.PNG)  
+When arriving on the site the user is welcomed by a window asking whether they would like to play versus another player or versus the computer. Playing versus the computer has three difficulties; easy, medium and hard. This modal dims the background while open.  
+![tictactoe-gameselect](assets/images/tictactoe-game-modal.PNG)  
 
 + Game Board  
-After making a decision the user is presented with the header and the game board and is allowed to make the first move. The user will notice that when hovering over a tile with the mouse, the current players symbol will be shown indicating who's turn it is.  
-![header](assets/images/tictactoe-header.PNG)  
-![empty-gameboard](assets/images/game-board-empty.PNG)  
-![half-gameboard](assets/images/game-board-midgame.PNG)  
+After making a decision the user is presented with the header with a score counter underneath followed by the game board and is allowed to make the first move. The user will notice that when hovering over a tile with the mouse, the current players symbol will be shown indicating who's turn it is.      
+![gameboard](assets/images/ttt-fullscreen.PNG)  
+The user can, if they wish, click on the header to flip the colors of the page.  
+![gameboard-flip](assets/images/ttt-fullscreen-flip.PNG)  
+![gameboard-filled](assets/images/ttt-gameboard-filled.PNG)  
+Under the game area is a text displaying the current game mode.
 
 + Game Over Screen  
 After winning, losing or ending in a draw the user is presented with a game over screen stating the winner and asking whether they would like to play again or change the game mode.  
-![gameover-screen](assets/images/game-over-modal2.PNG)  
+![gameover-screen](assets/images/ttt-gameover.PNG)  
+
++ Winner highlight and score  
+The winners position will be highlighted and the score will go up.  
+![win-highlight](assets/images/ttt-x-win.PNG)  
+![score](assets/images/ttt-score.png)
 
 ## Future Features  
-Future features might include a score counter, difficulty settings and sound.  
+Future features might include the minimax algorithm, symbol selection and sound.  
 
 ## Testing  
 Tests were performed on the following devices and browsers:  
@@ -66,10 +73,10 @@ On all of the above, the design of the site looks as intended during testing of 
 + Javascript
     + There is no errors going through [JSHint](jshint.com)
     + The following metrics were returned:
-        + There are 16 functions in this file.
-        + Function with the largest signature takes 1 argument, while the median is 0.5.
-        + Largest function has 20 statements in it, while the median is 2.
-        + The most complex function has a cyclomatic complexity value of 10 while the median is 1.  
+        + There are 21 functions in this file.
+        + Function with the largest signature takes 1 argument, while the median is 0.
+        + Largest function has 36 statements in it, while the median is 2.
+        + The most complex function has a cyclomatic complexity value of 62 while the median is 1.  
 
 ### Unfixed Bugs  
 + No known unfixed bugs. 
@@ -87,5 +94,5 @@ A link will show up, wait for it to load and then click on it to go to the deplo
 The live link can be found here: https://ant0nsk0.github.io/tictactoe/  
 
 ## Credits  
-+ The code for the game was adopted from following a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA). This includes win conditions, strikeclass, hovertext. More bits and pieces was adopted, transformed, and modified from the tutorial. 
++ The code for the core game was adopted and altered from following a tutorial from [Coding with Adam](https://www.youtube.com/watch?v=fPew9OI2PnA). This includes pieces like checking win conditions, hovertext, vsPlayer and game board structure and additional lines (see comments by code) that was based upon/adopted, altered, and modified from the tutorial. 
 + Font is from [Google Fonts](https://fonts.google.com/specimen/Righteous)
