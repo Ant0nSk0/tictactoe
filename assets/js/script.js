@@ -51,6 +51,7 @@ function runGame(gameType) {
         if (gameOverArea.classList.contains('visible')) {
             return;
         }
+        // tiles clickable and vsPlayer adopted and altered from tutorial (see README)
         const tile = event.target;
         const tileNumber = tile.dataset.index;
 
@@ -241,10 +242,12 @@ function gameOverScreen(winnerText) {
     } else if (winnerText == 'O') {
         oScore += 1;
     }
+    // text adopted from tutorial
     let text = 'Draw!';
     if (winnerText != null) {
         text = `Winner is ${winnerText}`;
     }
+
     displayXScore.innerText = ` ${xScore}`;
     displayOScore.innerText = ` ${oScore}`;
     gameOverArea.className = 'visible';
